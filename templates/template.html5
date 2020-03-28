@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+$for(author-meta)$
+<meta name="author" content="$author-meta$" />
+$endfor$
+<title>$pagetitle$</title>
+<link href="https://fonts.googleapis.com/css?family=Lato%26display=swap" rel="stylesheet">
+$for(css)$
+<link rel="stylesheet" href="$css$" />
+$endfor$
+</head>
+<body>
+$body$
+</body>
+</html>

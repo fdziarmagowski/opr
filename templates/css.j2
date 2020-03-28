@@ -1,0 +1,201 @@
+@page {
+  size: A4;
+  width: 210mm;
+  height: 297mm;
+  margin: 0;
+}
+
+/* grid */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 1;
+}
+.side_header {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row: 1;
+}
+.sidebar {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row: 2;
+}
+.content {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 2;
+}
+.item {
+  padding: 0.5em;
+}
+
+/* common styling */
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: 'Lato', sans-serif;
+  background-color: #{{ scheme.base00 }};
+  color: #{{ scheme.base05 }};
+}
+blockquote p {
+  color: #{{ scheme.base04 }};
+  font-size: 14px;
+  font-style: italic;
+  text-align: right;
+  margin: 0;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+}
+em {
+  font-style: italic;
+}
+p {
+  margin-bottom: 1em;
+  font-size: 15px;
+}
+span {
+  float: right;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  line-height: 1.8em;
+}
+strong {
+  font-weight: 700;
+}
+h1 {
+  color: #{{ scheme.base0D }};
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+h2 {
+  color: #{{ scheme.base04 }};
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+h3 {
+  margin-bottom: 0.3em;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #{{ scheme.base05 }};
+}
+h4 {
+  margin-bottom: 0.1em;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+h5 {
+  color: #{{ scheme.base04 }};
+  margin-bottom: 0.2em;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+h6 {
+  color: #{{ scheme.base05 }};
+  margin-top: 1em;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+/* https://stackoverflow.com/questions/7698764/custom-bullet-symbol-for-li-elements-in-ul-that-is-a-regular-character-and */
+ul {
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 0.6em;
+  padding-left: 1em;
+  text-indent: -1em;
+  font-size: 16px;
+}
+li:before {
+  color: #{{ scheme.base07 }};
+  content: "-";
+  display: block;
+  float: left;
+  width: 1em;
+}
+
+@media print {
+  .container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    padding: 1.5em;
+    line-height: 1.4;
+  }
+  h6 {
+    font-size: 10px;
+  }
+  ul {
+    font-size: 13px;
+  }
+  blockquote p {
+    font-size: 13px;
+  }
+  p {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* mobile devices */
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 10px;
+  }
+  h6 {
+    font-size: 10px;
+  }
+  ul {
+    font-size: 16px;
+  }
+  blockquote {
+    float: left;
+    border-left: 5px solid #{{ scheme.base0D }};
+  }
+  blockquote p {
+    font-size: 16px;
+    margin-left: 1em;
+  }
+  p {
+    font-size: 16px;
+  }
+}
