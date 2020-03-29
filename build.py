@@ -99,9 +99,11 @@ else:
 
         print('Generating PDF...')
         subprocess.run([
-            'chromium',
-            '--incognito',
+            'chromium-browser',
+            '--disable-gpu',
             '--headless',
+            '--incognito',
+            '--no-sandbox',
             '--print-to-pdf',
             f'file://{output_dir}/index.html'
         ], check=True, cwd=output_dir)
