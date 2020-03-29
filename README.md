@@ -5,6 +5,8 @@ Includes [reset.css](https://meyerweb.com/eric/tools/css/reset/) released as Pub
 
 ![Preview](static/preview.png)
 
+[Rendered HTML example](https://fdziarmagowski.github.io/opr/)
+
 ## Requirements
 
 - [Python](https://www.python.org/)
