@@ -3,6 +3,8 @@
 A simple resume generator using [Base16](https://github.com/chriskempson/base16), Pandoc and Jinja.
 Includes [reset.css](https://meyerweb.com/eric/tools/css/reset/) released as Public Domain.
 
+![Preview](static/preview.png)
+
 ## Requirements
 
 - [Python](https://www.python.org/)
