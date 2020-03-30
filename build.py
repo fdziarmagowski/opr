@@ -41,13 +41,16 @@ if not schemes_list.exists():
             pass
 
 schemes = []
-for p in sorted(Path().glob('base16/themes/**/*.yaml')):
-    schemes.append(str(p))
+for p in Path().glob('base16/themes/**/*.yaml'):
+    schemes.append(p)
 
 scheme = None
 if args.list:
-    for i in sorted(Path().glob('base16/themes/**/*.yaml')):
-        print(i.stem)
+    stems = []
+    for i in schemes:
+        stems.append(i.stem)
+    for i in sorted(stems):
+        print(i)
 else:
     if args.random:
         import random
@@ -57,7 +60,7 @@ else:
             print(f'Random Base16 pick: {scheme["scheme"]}')
     else:
         for f in schemes:
-            if f.endswith('/' + args.scheme + '.yaml'):
+            if str(f).endswith('/' + args.scheme + '.yaml'):
                 with open(f) as file:
                     scheme = yaml.safe_load(file)
                 break
@@ -97,9 +100,14 @@ else:
             f'{output_dir}/index.html'
         ], check=True)
 
+        if Path('/usr/bin/chromium').exists():
+            chromium_binary = 'chromium'
+        else:
+            chromium_binary = 'chromium-browser'
+
         print('Generating PDF...')
         subprocess.run([
-            'chromium-browser',
+            chromium_binary,
             '--disable-gpu',
             '--headless',
             '--incognito',
