@@ -18,6 +18,8 @@ Includes [reset.css](https://meyerweb.com/eric/tools/css/reset/) released as Pub
 
 ## Usage
 
+### From the command line
+
 ```sh
 # render HTML and PDF using Base16 Monokai theme
 ./build.py -s monokai
@@ -28,3 +30,31 @@ Includes [reset.css](https://meyerweb.com/eric/tools/css/reset/) released as Pub
 # list available Base16 themes
 ./build.py -l
 ```
+
+### Using Docker
+
+```sh
+# create required directories
+# .
+# ├── base16
+# ├── content
+# └── output
+mkdir base16/ output/ content/
+
+# place required content files
+# content/
+# ├── content.md
+# ├── header.md
+# ├── header.yaml
+# └── sidebar.md
+
+# start the container and
+# render HTML and PDF using Base16 Monokai theme
+
+docker run \
+    --rm \
+    --name opr \
+    --volume $(pwd)/content:/opr/content \
+    --volume $(pwd)/output/:/opr/output \
+    --volume $(pwd)/base16:/opr/base16 \
+    freddix/opr:latest -s monokai
