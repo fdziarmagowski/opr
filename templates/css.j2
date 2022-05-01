@@ -59,13 +59,6 @@ p {
   margin-bottom: 1em;
   font-size: 15px;
 }
-span {
-  float: right;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  line-height: 1.8em;
-}
 strong {
   font-weight: 700;
 }
@@ -78,21 +71,23 @@ h1 {
   text-transform: uppercase;
 }
 h2 {
-  color: #{{ scheme.base04 }};
+  color: #{{ scheme.base07 }};
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
   line-height: 1.4;
 }
 h3 {
+  color: #{{ scheme.base06 }};
   margin-bottom: 0.3em;
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-bottom: 1px solid #{{ scheme.base05 }};
+  border-bottom: 1px solid #{{ scheme.base04 }};
 }
 h4 {
+  color: #{{ scheme.base06 }};
   margin-bottom: 0.1em;
   font-size: 16px;
   font-weight: 900;
@@ -107,7 +102,7 @@ h5 {
   text-transform: uppercase;
 }
 h6 {
-  color: #{{ scheme.base05 }};
+  color: #{{ scheme.base04 }};
   margin-top: 1em;
   font-size: 13px;
   font-weight: 700;
@@ -130,6 +125,14 @@ li:before {
   display: block;
   float: left;
   width: 1em;
+  vertical-align: middle;
+}
+li span {
+  float: right;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  line-height: 1.8em;
 }
 
 @media print {

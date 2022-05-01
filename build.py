@@ -29,8 +29,8 @@ if not schemes_list.exists():
         # already present
         pass
 
-    with open("base16/schemes/list.yaml") as l:
-        schemes = yaml.safe_load(l)
+    with open("base16/schemes/list.yaml") as lst:
+        schemes = yaml.safe_load(lst)
 
     for name, repo in schemes.items():
         try:
@@ -108,7 +108,7 @@ else:
         print('Generating PDF...')
         subprocess.run([
             chromium_binary,
-            '--disable-gpu',
+            '--use-gl=swiftshader',
             '--headless',
             '--incognito',
             '--no-sandbox',

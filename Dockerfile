@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM docker.io/alpine:edge
 
 RUN set -ex \
     && echo "@edgetest http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
